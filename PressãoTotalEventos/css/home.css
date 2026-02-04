@@ -1,0 +1,352 @@
+
+/* -----------------------------------------------------
+   KEYFRAMES DE ANIMAÇÃO
+------------------------------------------------------*/
+
+/* Fundo panorâmico (efeito de profundidade) */
+@keyframes background-pan {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 100% 100%; }
+}
+
+/* Efeito de brilho pulsante (neon pulse) */
+@keyframes neon-pulse {
+  0% { box-shadow: 0 0 5px #a500f1, 0 0 10px #a500f1; }
+  50% { box-shadow: 0 0 25px #a500f1, 0 0 35px #a500f1; }
+  100% { box-shadow: 0 0 5px #a500f1, 0 0 10px #a500f1; }
+}
+
+/* Efeito de piscada (text flicker) */
+@keyframes text-flicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    text-shadow:
+      -0.05rem -0.05rem 1px #0A173D,
+      0.05rem 0.05rem 1px #ffffff,
+      0 0 0.5rem #ffffff,
+      0 0 2rem #ffffff;
+    opacity: 1;
+  }
+  20%, 24%, 55% {
+    text-shadow: none;
+    opacity: 0.8;
+  }
+}
+
+/* -----------------------------------------------------
+   TÍTULO PRINCIPAL
+------------------------------------------------------*/
+.sub-headline {
+  font-size: 2rem;
+  text-transform: uppercase;
+  color: #ffffff;
+  transition: text-shadow 0.3s ease, color 0.3s ease;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+.sub-headline:hover {
+  color: #ffffff;
+  text-shadow: 0 0 10px #B5179E, 0 0 20px #b5179e80;
+}
+
+
+.body{
+    background-color: #0A173D;
+}
+
+/* Menu */
+    .corMenu {
+        width: auto;
+        color: white;
+        font-family: 'Inter';
+        font-weight: bold;
+        font-size: 15px;
+    }
+
+    /*Animação ao passar o mouse no item do menu*/
+    .navbar-nav .nav-link {
+        transition: color 0.3s ease, text-shadow 0.3s ease; 
+        position: relative;
+        color: white !important; 
+    }
+
+    /*Animação ao clicar em algum item do menu*/
+    .navbar-nav .nav-link:hover, .navbar-nav .nav-link.active {
+        color: #ffffff !important;
+        text-shadow: 0 0 8px #ffffff; /* Adiciona um brilho neon */
+    }
+
+    /*Para os espaçamento no desktop*/
+        @media(min-width:900px) {
+            .corMenu{
+                width: 75%;
+            }
+        
+        }
+
+    /*Cor do icone dropdown*/
+        .navbar-toggler{
+            background-color: #0A173D !important;
+        }
+
+    /*Tirar borda padrao*/
+        .navbar-toggler:focus{
+            box-shadow: none !important;
+        }
+
+    /*Alterar icone e o tamanho dele*/
+        .navbar-toggler-icon{
+            width: 3.5em !important;
+            height: 3.5em !important;
+            background-image: url(../img/icon.png) !important; 
+        }
+
+    /*Dropdown no cell*/
+        .dropdown-menu {
+            background-color: #01284e !important; /* para anular a cor que ja veio com ele */
+        }
+
+        .dropdown-menu .dropdown-item:hover {
+            background-color: #02366e; 
+        }
+
+        .dropdown-item{
+            font-family: 'Inter';
+        }
+
+/*Meio 1*/
+
+    /*Botão de agendamento*/
+        .btn-cta {
+            background: linear-gradient(90deg, #001d9c, #B5179E);
+            border-color: #003066 !important; 
+            color: white !important;
+            
+            padding: 12px 25px; 
+            border-radius: 25px;
+            transition: all 0.3s ease; 
+            font-size: 1.1rem; 
+            white-space: nowrap; 
+        }   
+
+        .btn-cta:hover {
+            background: linear-gradient(90deg, #B5179E, #001d9c); /* inverte as cores */
+        box-shadow: 0 0 25px #b5179e80, 0 0 45px #4361ee60; /* brilho duplo azul e rosa */
+        transform: scale(1.07); /* leve zoom */
+        animation: pulse 1.5s ease-in-out infinite alternate;
+        }
+
+        .meio1 .botaoMeio1{
+            margin-top: 4% !important;
+            margin-bottom: 5% !important;
+        }
+
+         @media(max-width:450px) {
+            .titulo{
+                margin: 0% 1%;
+            }
+
+            .imgPrincipal{
+                margin: 0% 2% 10% 0%;
+            }
+
+            .meio1 .botaoMeio1{
+                margin: 0% 0% 20% 0% !important;
+            }
+         }
+
+
+/*Meio 2*/
+    .meio2 {
+        color: white;
+    }
+
+    .meio2 h3{
+        font-family: 'Inter';
+        font-weight: normal;
+        font-size: 20px;
+    }
+
+    .meio2 h2{
+        font-family: 'Russo One';
+    }
+
+    /*Botao*/
+        .meio2 .botaoMeio2{
+            margin-top: 6% !important;
+        }
+
+    /*Espaçar imagens da descrição no desktop*/
+        .blocoImagem{
+            margin-top: 2.5%;
+        }
+
+    /*Alinhamento*/
+        .meio2 h2{
+            margin-left: 3.5%;
+            margin-top: 3%;
+        }
+
+        .meio2 h3{
+            margin-left: 3.5%;
+        }
+
+    /*Imagens*/
+        .card{
+            width: 340px !important;
+            height: 502px !important;
+            align-items: center;
+        }
+
+        .card-img{
+            width: 340px !important;
+            height: 502px !important;
+            border-radius: 15px !important;
+        }
+
+        .card-title{
+            opacity: 0.9;
+        }
+
+        .card-img-overlay{
+            top: 420px !important;
+        }
+
+            /*Deixar imagens com movimento*/
+                .modificar{
+                    transition: all 0.5s ease;
+                }
+
+                .modificar:hover{
+                    transform: translateY(-5px);
+                }
+
+    /*Espaçamento no celular*/
+        @media(max-width:450px) {
+
+            .meio2 h2{
+                text-align: center;
+                margin: 0% 1% 4% 1%;
+            }
+
+            .meio2 h3{
+                text-align: center;
+                margin: 0% 3% 4% 3%;
+            }
+
+            /*Classe as imagens para espaçamento em celular*/
+                .imagens{
+                    margin-bottom: 10%;
+                }    
+
+            /*Espaçamento da primeira imagem para a descrição em celular*/
+                .primeira{
+                    margin-top: 5%;
+                }
+
+        }
+
+/*Meio 3*/
+    /*desktop*/
+        .meio3{
+            margin-top: 6%;
+            color: white;
+        }
+
+        .meio3 h3{
+            font-family: 'Russo One';
+            margin-bottom: 1%;
+            margin-left: 4%;
+        }
+
+        .carousel-inner{
+            width: 90% !important;
+            border-radius: 20px;
+            margin-left: 10%;
+        }
+
+        
+
+        /*Texto*/
+            .textoMeio3{
+                text-align: center;
+                margin: 20% 0% 0% 5%;
+                font-weight: normal ;
+            }
+
+            .textoMeio3 p{
+                margin-top: 3%;
+            }
+            .carouselTexto{
+                display: flex;
+                align-items: center;
+            }
+
+            .meio3 .botaoMeio3{
+                margin-top: 5% !important;
+            }
+
+    /*Mobile*/
+        @media(max-width:450px){
+                /*Bloco*/
+                    .meio3{
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        text-align: center;
+                    }
+
+                    /*Texto*/
+                        .meio3 h3{
+                            margin-bottom: 4%;
+                        }
+
+                            .meio3 h4{
+                            margin: 7% 0% 0% 5%;
+                            width: 90%;
+                        }
+                        
+                        .meio3 h4 p{
+                            margin-top: 3%;
+                        }
+
+                    /*Carousel*/
+                        .carousel-inner{
+                        border-radius: 20px;
+                        margin-left: 5%; 
+                        }
+        }
+
+
+/* --- FOOTER E MEDIA QUERIES --- */
+
+.footer-section {
+    background-color: #0A0F3C;
+    color: white;
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+    margin-top: 10%;
+}
+
+.social-follow-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.email-contact {
+    font-size: 1rem;
+    color: #ffffff;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ÍCONE DO INSTAGRAM (AGORA MAIOR E INTERATIVO) */
+.social-icon {
+    width: 60px; /* NOVO TAMANHO */
+    height: 60px; /* NOVO TAMANHO */
+    transition: transform 0.3s ease; 
+}
+
+.social-icon:hover {
+    transform: scale(1.2); /* Efeito de zoom no hover */
+}

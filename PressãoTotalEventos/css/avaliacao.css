@@ -1,0 +1,240 @@
+/* -----------------------------------------------------
+   FONTES, CORES E AJUSTES GERAIS
+------------------------------------------------------*/
+body {
+  background-color: #0A173D;
+  font-family: 'Orbitron', sans-serif;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+/* -----------------------------------------------------
+   KEYFRAMES DE ANIMAÇÃO
+------------------------------------------------------*/
+
+/* Fundo panorâmico (efeito de profundidade) */
+@keyframes background-pan {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 100% 100%; }
+}
+
+
+
+/* Efeito de piscada (text flicker) */
+@keyframes text-flicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    text-shadow:
+      -0.05rem -0.05rem 1px #0A173D,
+      0.05rem 0.05rem 1px #ffffff,
+      0 0 0.5rem #ffffff,
+      0 0 2rem #ffffff;
+    opacity: 1;
+  }
+  20%, 24%, 55% {
+    text-shadow: none;
+    opacity: 0.8;
+  }
+}
+
+/* -----------------------------------------------------
+   MENU (HEADER)
+------------------------------------------------------*/
+
+.navbar {
+  background-color: #0A173D;
+}
+
+.corMenu {
+  width: auto;
+  color: white;
+  font-family: 'Inter', sans-serif;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+@media (min-width: 900px) {
+  .corMenu {
+    width: 75%;
+  }
+}
+
+.navbar-toggler {
+  background-color: #ffffffe8 !important;
+}
+
+/* Links do menu */
+.navbar-nav .nav-link {
+  color: white !important;
+  position: relative;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+/* Hover e ativo */
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+  color: #ffffff !important;
+  text-shadow: 0 0 8px #ffffff;
+}
+
+/* Dropdown */
+.dropdown-menu {
+  background-color: #01284e !important;
+}
+
+.dropdown-item {
+  font-family: 'Inter', sans-serif;
+  color: white !important;
+}
+
+.dropdown-item:hover {
+  background-color: #02366e;
+}
+
+/* Aplica flicker APENAS ao "Eventos" quando o usuário passa o mouse */
+.navbar-nav .dropdown:hover > .nav-link {
+  animation: text-flicker 2s infinite;
+}
+
+/* -----------------------------------------------------
+   TÍTULO PRINCIPAL
+------------------------------------------------------*/
+.sub-headline {
+  font-size: 2rem;
+  text-transform: uppercase;
+  color: #ffffff;
+  transition: text-shadow 0.3s ease, color 0.3s ease;
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+
+
+
+}
+
+.sub-headline:hover {
+  color: #ffffff;
+  text-shadow: 0 0 10px #B5179E, 0 0 20px #b5179e80;
+}
+
+/* -----------------------------------------------------
+   COMENTÁRIOS / AVALIAÇÕES
+------------------------------------------------------*/
+.comentario {
+  display: flex;
+  justify-content: center;
+  border-radius: 12px;
+  padding: 0.4rem;
+  margin: 15px 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  animation: float 4s ease-in-out infinite;
+  transition: all 0.3s ease;
+}
+
+/* Efeito de flutuação base */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+/* Flutuação individual */
+.av1 { animation-delay: 0s; animation-duration: 3s; }
+.av2 { animation-delay: 0.5s; animation-duration: 3s; }
+.av3 { animation-delay: 0s; animation-duration: 3s; }
+.av4 { animation-delay: 0.5s; animation-duration: 4s; }
+.av5 { animation-delay: 1s; animation-duration: 6s; }
+.av6 { animation-delay: 0s; animation-duration: 3s; }
+.av7 { animation-delay: 1s; animation-duration: 5s; }
+
+/* Imagens das avaliações */
+.comentario img {
+  border: 4px solid;
+  border-radius: 8px;
+  border-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%) 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Pausar flutuação e aplicar zoom no hover */
+.comentario:hover {
+  animation-play-state: paused;
+  transform: scale(1.03);
+}
+
+.comentario:hover img {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #764ba2;
+}
+
+/* -----------------------------------------------------
+   FOOTER
+------------------------------------------------------*/
+.footer-section {
+  background-color: #0A0F3C;
+  color: white;
+  padding-top: 2rem !important;
+  padding-bottom: 2rem !important;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: 8%;
+}
+
+.social-follow-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.email-contact {
+  font-size: 1rem;
+  color: #ffffff;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Ícone do Instagram */
+.social-icon {
+  width: 60px;
+  height: 60px;
+  transition: transform 0.3s ease;
+}
+
+.social-icon:hover {
+  transform: scale(1.2);
+}
+
+/* -----------------------------------------------------
+   MEDIA QUERIES PARA TELAS MAIORES
+------------------------------------------------------*/
+@media (min-width: 992px) {
+  .main-title {
+    font-size: 4.5rem;
+  }
+
+  .sub-headline {
+    font-size: 2.8rem;
+  }
+
+  .description-text {
+    font-size: 1.2rem;
+  }
+}
+
+/* -----------------------------------------------------
+   MOBILE – Comentários empilhados (um embaixo do outro)
+------------------------------------------------------*/
+@media (max-width: 768px) {
+
+  /* Cada card ocupa a linha inteira */
+  .comentario {
+    width: 100% !important;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  /* Ajusta o conteúdo interno também */
+  .comentario img {
+    width: 100%;
+    height: auto;
+  }
+}
